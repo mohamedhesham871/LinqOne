@@ -42,6 +42,15 @@ namespace LinqOne
             //}
             #endregion
 
+            #region Three :Returns digits whose name is shorter than their value.
+            string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            var List = Arr.Where((a, i) => a.Length < i);
+            foreach (var a in List)
+            {
+                Console.WriteLine(a);
+            }
+            #endregion
+
             //three Missing 
 
             #region [Part Two] One : 1. Return a sequence of just the names of a list of products.
@@ -121,14 +130,14 @@ namespace LinqOne
             #endregion
 
             #region [Part Two] 7 :Select all orders where the order was made in 1998 or later.
-            var OrdersList = from i in CustomerList
-                             from o in i.Orders
-                             where o.OrderDate >= new DateTime(1998, 1, 1)
-                             select o;
-            foreach (var o in OrdersList)
-            {
-                Console.WriteLine(o);
-            }
+            //var OrdersList = from i in CustomerList
+            //                 from o in i.Orders
+            //                 where o.OrderDate >= new DateTime(1998, 1, 1)
+            //                 select o;
+            //foreach (var o in OrdersList)
+            //{
+            //    Console.WriteLine(o);
+            //}
 
             #endregion
 
