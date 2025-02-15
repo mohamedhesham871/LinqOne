@@ -26,19 +26,37 @@ namespace LinqOne
             #endregion
 
             #region Two :2. Find all products that are in stock and cost more than 3.00 per unit.
-            // in stock mean >0 
-            var productCostGreater3_00 = ProductList.Where(p => p.UnitsInStock > 0 && p.UnitPrice > 3);
-            foreach (var unit in productCostGreater3_00)
+            //// in stock mean >0 
+            //var productCostGreater3_00 = ProductList.Where(p => p.UnitsInStock > 0 && p.UnitPrice > 3);
+            //foreach (var unit in productCostGreater3_00)
+            //{
+            //    Console.WriteLine(unit);
+            //}
+            //Console.WriteLine("-------------Another Solve--------");
+            //var productCostGreater3_00_V2= from p in ProductList
+            //                               where p.UnitsInStock > 0 && p.UnitPrice>3
+            //                               select p;
+            //foreach (var unit in productCostGreater3_00_V2)
+            //{
+            //    Console.WriteLine(unit);
+            //}
+            #endregion
+
+            //three Missing 
+
+            #region [Part Two] One : 1. Return a sequence of just the names of a list of products.
+            var ProductName = ProductList.Select(p => p.ProductName);
+
+            foreach (var Product in ProductName)
             {
-                Console.WriteLine(unit);
+                Console.WriteLine(Product);
             }
             Console.WriteLine("-------------Another Solve--------");
-            var productCostGreater3_00_V2= from p in ProductList
-                                           where p.UnitsInStock > 0 && p.UnitPrice>3
-                                           select p;
-            foreach (var unit in productCostGreater3_00_V2)
+            var ProductName02 = from p in ProductList
+                                select p.ProductName;
+            foreach (var Product in ProductName02)
             {
-                Console.WriteLine(unit);
+                Console.WriteLine(Product);
             }
             #endregion
         }
