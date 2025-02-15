@@ -4,7 +4,7 @@ namespace LinqOne
 {
     internal class Program
     {
-        static void Main(string[] args)
+        static void Main(string[] args) 
         {
             #region One :1. Find all products that are out of stock
             //var OutOfStock = ProductList.Where(p => p.UnitsInStock == 0);
@@ -81,16 +81,33 @@ namespace LinqOne
 
             #region 4. Determine if the value of ints in an array match their position in the array.
 
-            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+            //int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
 
-            var ISposition = Arr.Select((p, i) => i == p);
+            //var ISposition = Arr.Select((p, i) => i == p);
 
-            foreach (var i in ISposition)
+            //foreach (var i in ISposition)
+            //{
+            //    Console.WriteLine(i);
+            //}
+
+            #endregion
+
+            #region [Part two] 5 :Returns all pairs of numbers from both arrays such that the number from numbersA is less than the number from numbersB.
+
+            int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            int[] numbersB = { 1, 3, 5, 7, 8 };
+            var compare = from a in numbersA
+                          from b in numbersB
+                          where a.CompareTo(b)==-1
+                          select $"{a} is Less than {b}";
+
+            foreach (var i in compare)
             {
                 Console.WriteLine(i);
             }
-
+             //Please Help ME to make it Fluent not Query 
             #endregion
+
         }
     }
 }
