@@ -109,16 +109,28 @@ namespace LinqOne
             #endregion
 
             #region [Part Two] 6 :6. Select all orders where the order total is less than 500.00.
-            var OrderLessThan500 =from i in CustomerList
-                                  from o in i.Orders
-                                  where o.Total<500
-                                  select o;
-            foreach (var order in OrderLessThan500)
-            {
-                Console.WriteLine(order);
-            }
-           // Ask You Again Help ME  to make Fluent
+            //var OrderLessThan500 = from i in CustomerList
+            //                       from o in i.Orders
+            //                       where o.Total < 500
+            //                       select o;
+            //foreach (var order in OrderLessThan500)
+            //{
+            //    Console.WriteLine(order);
+            //}
+            // Ask You Again Help ME  to make Fluent
+            #endregion
 
+            #region [Part Two] 7 :Select all orders where the order was made in 1998 or later.
+            var OrdersList = from i in CustomerList
+                             from o in i.Orders
+                             where o.OrderDate >= new DateTime(1998, 1, 1)
+                             select o;
+            foreach (var o in OrdersList)
+            {
+                Console.WriteLine(o);
+            }
+
+            #endregion
 
         }
     }
