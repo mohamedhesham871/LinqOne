@@ -65,18 +65,31 @@ namespace LinqOne
             #endregion
 
             #region [Part Two] Three: 3. Produce a sequence containing some properties of Products, including UnitPrice which is renamed to Price in the resulting type.
-            var SeqOfProduct = ProductList.Select(p => new
+            //var SeqOfProduct = ProductList.Select(p => new
+            //{
+            //    ID = p.ProductID,
+            //    PName = p.ProductName,
+            //    Category = p.Category,
+            //    Price = p.UnitPrice,
+            //    UnitsInStock = p.UnitsInStock
+            //});
+            //foreach (var item in SeqOfProduct)
+            //{
+            //    Console.WriteLine(item);
+            //}
+            #endregion
+
+            #region 4. Determine if the value of ints in an array match their position in the array.
+
+            int[] Arr = { 5, 4, 1, 3, 9, 8, 6, 7, 2, 0 };
+
+            var ISposition = Arr.Select((p, i) => i == p);
+
+            foreach (var i in ISposition)
             {
-                ID = p.ProductID,
-                PName = p.ProductName,
-                Category = p.Category,
-                Price = p.UnitPrice,
-                UnitsInStock = p.UnitsInStock
-            });
-            foreach (var item in SeqOfProduct)
-            {
-                Console.WriteLine(item);
+                Console.WriteLine(i);
             }
+
             #endregion
         }
     }
