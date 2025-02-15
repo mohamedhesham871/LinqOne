@@ -45,18 +45,37 @@ namespace LinqOne
             //three Missing 
 
             #region [Part Two] One : 1. Return a sequence of just the names of a list of products.
-            var ProductName = ProductList.Select(p => p.ProductName);
+            //var ProductName = ProductList.Select(p => p.ProductName);
 
-            foreach (var Product in ProductName)
+            //foreach (var Product in ProductName)
+            //{
+            //    Console.WriteLine(Product);
+            //}
+            //Console.WriteLine("-------------Another Solve--------");
+            //var ProductName02 = from p in ProductList
+            //                    select p.ProductName;
+            //foreach (var Product in ProductName02)
+            //{
+            //    Console.WriteLine(Product);
+            //}
+            #endregion
+
+            #region  [Part Two] Two :Produce a sequence of the uppercase and lowercase versions of each word in the original array (Anonymous Types).
+
+            #endregion
+
+            #region [Part Two] Three: 3. Produce a sequence containing some properties of Products, including UnitPrice which is renamed to Price in the resulting type.
+            var SeqOfProduct = ProductList.Select(p => new
             {
-                Console.WriteLine(Product);
-            }
-            Console.WriteLine("-------------Another Solve--------");
-            var ProductName02 = from p in ProductList
-                                select p.ProductName;
-            foreach (var Product in ProductName02)
+                ID = p.ProductID,
+                PName = p.ProductName,
+                Category = p.Category,
+                Price = p.UnitPrice,
+                UnitsInStock = p.UnitsInStock
+            });
+            foreach (var item in SeqOfProduct)
             {
-                Console.WriteLine(Product);
+                Console.WriteLine(item);
             }
             #endregion
         }
