@@ -94,19 +94,31 @@ namespace LinqOne
 
             #region [Part two] 5 :Returns all pairs of numbers from both arrays such that the number from numbersA is less than the number from numbersB.
 
-            int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
-            int[] numbersB = { 1, 3, 5, 7, 8 };
-            var compare = from a in numbersA
-                          from b in numbersB
-                          where a.CompareTo(b)==-1
-                          select $"{a} is Less than {b}";
+            //int[] numbersA = { 0, 2, 4, 5, 6, 8, 9 };
+            //int[] numbersB = { 1, 3, 5, 7, 8 };
+            //var compare = from a in numbersA
+            //              from b in numbersB
+            //              where a.CompareTo(b) == -1
+            //              select $"{a} is Less than {b}";
 
-            foreach (var i in compare)
-            {
-                Console.WriteLine(i);
-            }
-             //Please Help ME to make it Fluent not Query 
+            //foreach (var i in compare)
+            //{
+            //    Console.WriteLine(i);
+            //}
+            //Please Help ME to make it Fluent not Query 
             #endregion
+
+            #region [Part Two] 6 :6. Select all orders where the order total is less than 500.00.
+            var OrderLessThan500 =from i in CustomerList
+                                  from o in i.Orders
+                                  where o.Total<500
+                                  select o;
+            foreach (var order in OrderLessThan500)
+            {
+                Console.WriteLine(order);
+            }
+           // Ask You Again Help ME  to make Fluent
+
 
         }
     }
