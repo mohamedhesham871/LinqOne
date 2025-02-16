@@ -43,12 +43,12 @@ namespace LinqOne
             #endregion
 
             #region Three :Returns digits whose name is shorter than their value.
-            string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
-            var List = Arr.Where((a, i) => a.Length < i);
-            foreach (var a in List)
-            {
-                Console.WriteLine(a);
-            }
+            //string[] Arr = { "zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine" };
+            //var List = Arr.Where((a, i) => a.Length < i);
+            //foreach (var a in List)
+            //{
+            //    Console.WriteLine(a);
+            //}
             #endregion
 
             //three Missing 
@@ -70,6 +70,13 @@ namespace LinqOne
             #endregion
 
             #region  [Part Two] Two :Produce a sequence of the uppercase and lowercase versions of each word in the original array (Anonymous Types).
+            string[] words = { "aPPLE", "BlUeBeRrY", "cHeRry" };
+            var test =from c in words
+                      select new { lower =c.ToLower() ,Upper =c.ToUpper() };
+            foreach (var word in test)
+            {
+                Console.WriteLine(word);
+            }
 
             #endregion
 
